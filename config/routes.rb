@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: 'restaurants#index'
-  resources :restaurants do
-    resources :reviews, only: [ :index, :new, :create ]
+  resources :restaurants, only: [ :index, :new, :show ] do
+    resources :reviews, only: [ :new, :create ]
   end
-  resources :reviews, only: [ :show, :edit, :update, :destroy ]
+  resources :reviews, only: [ :show ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

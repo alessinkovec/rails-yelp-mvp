@@ -10,8 +10,8 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    # @review = Review.find(params[:restaurant_id])
-    # @restaurant.review = @review
+    @review = Review.new
+    @reviews = Review.where(restaurant_id: params[:id])
   end
 
   # GET /restaurants/new
